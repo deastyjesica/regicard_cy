@@ -1,0 +1,177 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 2,
+    "failures": -1,
+    "start": "2024-12-07T16:54:12.728Z",
+    "end": "2024-12-07T16:55:36.171Z",
+    "duration": 83443,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 40,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "24d9f33f-2b7e-43cd-a23e-9c8948062dbe",
+      "title": "",
+      "fullFile": "cypress\\e2e\\regicard_existing_user.spec.js",
+      "file": "cypress\\e2e\\regicard_existing_user.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "81ecf37a-5674-4de9-b07a-1b85c2467fdb",
+          "title": "E2E UPBOND Mimaru Regicard STG",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "01. Login Existing User LINE",
+              "fullTitle": "E2E UPBOND Mimaru Regicard STG 01. Login Existing User LINE",
+              "timedOut": null,
+              "duration": 30820,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://mimaru-regicard.stg.upbond.io/');\ncy.get('body').should('be.visible');\ncy.contains('line deastyj', {\n  timeout: 20000\n}).should('be.visible');",
+              "err": {},
+              "uuid": "29447059-43b4-4343-945c-93e729ff0b2d",
+              "parentUUID": "81ecf37a-5674-4de9-b07a-1b85c2467fdb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "02. User Add Companion",
+              "fullTitle": "E2E UPBOND Mimaru Regicard STG 02. User Add Companion",
+              "timedOut": null,
+              "duration": 27204,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://mimaru-regicard.stg.upbond.io/');\n// click add companion\ncy.get('.z-0', {\n  timeout: 10000\n}).should('be.visible').and('contain.text', '同行者を追加する').click({\n  force: true\n});\ncy.get('.flex-row > .z-0').click(); // click button popup\ncy.get('.bg-secondary').contains('撮影する').click(); //click take photo\ncy.get('.bg-secondary').contains('確定する').click(); // click confirm photo\n//step 2/3\ncy.get('.gap-3 > :nth-child(2)').contains('本人情報の入力').should('be.visible'); //tangkap judul 2/3\ncy.get('input[aria-label=\"姓名\"]').type('Deastyj FriendOne'); // input name companion\ncy.get('button.bg-secondary[type=\"submit\"]').click(); // click submit\n//step 3/3\ncy.get('.gap-3 > :nth-child(2)').contains('入力内容の確認').should('be.visible'); //tangkap judul 3/3\n//cy.get('.bg-secondary').click();\ncy.get('button.bg-secondary').contains('登録する').click(); // click button\ncy.wait(20000);\ncy.get('button.bg-secondary').contains('パスポート登録HOMEへ').should('be.visible').click(); // click back to home popup\ncy.get('p.text-lg').should('contain.text', 'friend deastyj');\ncy.get('.text-lg').should('contain.text', 'FriendOne Deastyj');",
+              "err": {},
+              "uuid": "d7b57051-babf-4058-8d22-921147b3538c",
+              "parentUUID": "81ecf37a-5674-4de9-b07a-1b85c2467fdb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "03. User Click Delete Companion",
+              "fullTitle": "E2E UPBOND Mimaru Regicard STG 03. User Click Delete Companion",
+              "timedOut": null,
+              "duration": 21976,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://mimaru-regicard.stg.upbond.io/');\ncy.wait(20000);\ncy.get('.text-lg').should('contain.text', 'FriendOne Deastyj');\ncy.get('div.flex.text-sm.justify-end.gap-2 > button.underline').eq(2).should('be.visible').click(); // click delete \ncy.get('button.bg-danger').contains('削除する').click(); // popup click delete",
+              "err": {},
+              "uuid": "c25423e8-dc94-41df-9d74-fddc2f3bb6c4",
+              "parentUUID": "81ecf37a-5674-4de9-b07a-1b85c2467fdb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "04. User Change Language",
+              "fullTitle": "E2E UPBOND Mimaru Regicard STG 04. User Change Language",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('http://mimaru-regicard.stg.upbond.io/');\ncy.wait(20000);\ncy.get('#react-aria-:R4r6:').click({\n  force: true\n}); // click icon lang\ncy.get('#react-aria2891349369-\\:r5q\\:'); // click English lang\n//cy.get('li#react-aria2817501897-:ro:').click(); // click English lang\ncy.get('h1.text-xl.font-bold.mb-5').should('contain.text', 'Passport Registration'); // tangkap English title",
+              "err": {},
+              "uuid": "649eb779-17b1-4c51-9cda-9ed713a13ce3",
+              "parentUUID": "81ecf37a-5674-4de9-b07a-1b85c2467fdb",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "05. User Go to Kurogo Page",
+              "fullTitle": "E2E UPBOND Mimaru Regicard STG 05. User Go to Kurogo Page",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit('http://mimaru-regicard.stg.upbond.io/');\ncy.wait(5000);\ncy.get('.my-2 > .relative').click(); // click kurogo home\ncy.wait(5000);\ncy.contains('保有Stable Coin').should('be.visible');",
+              "err": {},
+              "uuid": "de8e01cb-a79f-43d9-adad-a83ede36d792",
+              "parentUUID": "81ecf37a-5674-4de9-b07a-1b85c2467fdb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "29447059-43b4-4343-945c-93e729ff0b2d",
+            "d7b57051-babf-4058-8d22-921147b3538c",
+            "c25423e8-dc94-41df-9d74-fddc2f3bb6c4"
+          ],
+          "failures": [],
+          "pending": [
+            "649eb779-17b1-4c51-9cda-9ed713a13ce3",
+            "de8e01cb-a79f-43d9-adad-a83ede36d792"
+          ],
+          "skipped": [],
+          "duration": 80000,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

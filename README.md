@@ -18,4 +18,4 @@
 - [Test Scenario](https://docs.google.com/spreadsheets/d/1zveT648w18oZB30-4FMLFR2yjG8oAYm-7l8w74ySniY/edit?gid=563568438#gid=563568438)
 
 ### Result
-- ![alt text](https://github.com/deastyjesica/regicard_cy/blob/master/mochawesome-report/assets/Screenshot%202024-12-08%20204131.png?raw=true)
+![alt text](https://github.com/deastyjesica/regicard_cy/blob/master/mochawesome-report/assets/Screenshot%202024-12-08%20204131.png?raw=true)

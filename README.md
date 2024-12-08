@@ -18,4 +18,4 @@
 - [Test Scenario](https://docs.google.com/spreadsheets/d/1zveT648w18oZB30-4FMLFR2yjG8oAYm-7l8w74ySniY/edit?gid=563568438#gid=563568438)
 
 ### Result
-- [Screenshot](https://drive.google.com/file/d/1LyEJMEpev6U9-_UGLh7bT6Vmz5_KT2Qc/view?usp=sharing)
+- ![alt text](https://drive.google.com/file/d/1LyEJMEpev6U9-_UGLh7bT6Vmz5_KT2Qc/view?usp=sharing?raw=true)
